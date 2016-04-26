@@ -1,0 +1,20 @@
+{
+  "deploy" : {
+    "staging" : {
+      "user" : "deploy",
+      "host" : "staging.ers.local",
+      "ref"  : "origin/master",
+      "repo" : "git@gitlab.ers.local:gallery-by-react/gallery-by-react.git",
+      "path" : "~/gallery-by-react",
+      "post-deploy" : "npm i && npm run build"
+    },
+    "production" : {
+      "user" : "deploy",
+      "host" : "web.ers.local",
+      "ref"  : "origin/master",
+      "repo" : "git@gitlab.ers.local:gallery-by-react/gallery-by-react.git",
+      "path" : "/webdata/www/gallery-by-react",
+      "post-deploy" : "npm i && npm run build"
+    }
+  }
+}
